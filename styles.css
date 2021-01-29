@@ -1,0 +1,44 @@
+body{
+    background: green;
+}
+
+.container {
+    margin:3rem 30%;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 20px;
+    position:absolute;
+}
+
+.top{
+    position:absolute;
+    top: 15px;
+    left:15px;
+    font-size: 100px;
+}
+#number{
+    margin-top: 35%;
+    text-align: center;
+    font-size: 200px;
+}
+
+.buttom{
+    position:absolute;
+    bottom: 15px;
+    right:15px;
+    font-size: 100px;
+    transform-origin:50%;
+    transform:rotate(180deg);
+}
+#btn-new{
+    margin:35rem 30%;
+    width: 350px;
+    height: 40px;
+    top: 570px;
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background: red;
+    color:white
+}
