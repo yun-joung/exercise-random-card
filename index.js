@@ -1,27 +1,47 @@
-let indice = 0
-window.onload = () => {
-    document.querySelector('#btn-new').addEventListener("click", () => {
-        document.querySelector('#number').innerHTML = cambiarNumber();
-        const cardIconColor = ['red', 'black', 'red', 'black'];
-        var listIcon = document.querySelectorAll('.icon');
-        var icon = cambiarIcon();
-        for (i = 0; i < listIcon.length; i++) {
-            listIcon[i].innerHTML = icon;
-            listIcon[i].style.color = cardIconColor[indice];
-        }
-        document.querySelector('#number').style.color = cardIconColor[indice];
-    });
-    let cambiarIcon = () => {
-        const cardIcon = ['♠', '♣', '♥', '♦'];
-        const random = Math.floor(Math.random() * cardIcon.length);
-        indice = random;
-        console.log(indice, cardIcon[random]);
-        return cardIcon[random];
-    }
-};
-let cambiarNumber = () => {
-    const cardNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'K', 'j', 'Q'];
-    const random = Math.floor(Math.random() * cardNumber.length);
-    console.log(random, cardNumber[random]);
-    return cardNumber[random];
+let button = document.querySelector("#fetch")
+button.addEventListener("click", () => {
+    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=8085c11d")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        showData(data.results)
+    })
+})
+
+const showData = (data) => {
+    let ul = document.querySelector("#lista")
+    for(let i =0 ; index < data.length; i++){
+    let li = document.createElement("li")
+    let text = document.createTextNode(data[i].name)
+    li.appendChile(text)
+    ul.appendChile(li)
 }
+
+
+
+}
+
+
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+    }
+
+fetch("http://www.omdbapi.com/?i=tt3896198&apikey=8085c11d")
+.then(res => res.json())
+.then(data => console.log(data))
+
+let button = do
+// window.onscroll = () => {
+//     var myNav = document.getElementById("myTopnav");
+//     if (document.body.scrollTop >= 280 || document.documentElement.scrollTop >= 280) {
+//     myNav.className += " navScroll";
+//     } else {
+//     myNav.className  = "topnav";
+//     }
+// };
